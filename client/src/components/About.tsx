@@ -16,21 +16,30 @@ export default function About() {
           <h3 className="text-3xl md:text-4xl font-bold text-primary mb-8">
             Bridging Technical Precision with Business Strategy
           </h3>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            {aboutData.content}
-          </p>
+          <div className="space-y-5 text-lg md:text-xl text-muted-foreground leading-relaxed">
+            {aboutData.content.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
 
-          <div className="mt-12 pt-12 border-t border-gray-100">
-            <h4 className="text-xl font-bold text-primary mb-6">Skills & Technologies</h4>
-            <div className="flex flex-wrap justify-center gap-3">
-              {aboutData.skills.map((skill, index) => (
-                <span 
-                  key={index}
-                  className="px-6 py-3 rounded-full bg-slate-50 text-primary font-medium border border-slate-200 shadow-sm hover:shadow-md hover:border-secondary/30 hover:text-secondary transition-all cursor-default"
-                >
-                  {skill}
-                </span>
-              ))}
+          <div id="what-i-bring" className="mt-12 pt-12 border-t border-gray-100">
+            <h4 className="text-xl font-bold text-primary mb-6">What I Bring</h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+              {aboutData.whatIBring.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={item.title}
+                    className="h-full rounded-2xl bg-slate-50 border border-slate-200 p-6 shadow-sm transition-all hover:shadow-md hover:border-secondary/30"
+                  >
+                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-secondary/10 text-secondary">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </div>
+                    <h5 className="text-lg font-bold text-primary mb-2">{item.title}</h5>
+                    <p className="text-base leading-relaxed text-muted-foreground">{item.description}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </motion.div>
