@@ -1,50 +1,52 @@
 import {
-  FileText,
-  Github,
-  Linkedin,
-  Mail,
-  ExternalLink,
-  Download,
   BarChart2,
   Brain,
-  Activity,
   Users,
-  PenTool,
   Lightbulb,
 } from "lucide-react";
 
 export const siteConfig = {
   name: "Folusho Kayode",
-  role: "Business & Data Analyst",
+  role: "Business Analysis | Data Analytics | Artificial Intelligence",
   email: "folushoakinnawo@gmail.com",
   linkedin: "https://www.linkedin.com/in/folushokayode/",
   github: "https://github.com/FolushoKayode",
-  resume:
-    "https://drive.google.com/file/d/192WJQewXKltr1EZyeReSL21lyaYPF3ZE/view",
+  resume: "/Folusho_Kayode_Resume.pdf",
 };
 
 export const heroData = {
-  headline: "Transforming Data into Decisions.",
+  headline: "Business Analysis | Data Analytics | Artificial Intelligence",
   subheadline:
-    "Business & Data Analyst | Master’s Student in Business Analytics & AI | 7+ Years in Software Quality and Process Optimization.",
-  status: "Available for Summer 2026 Internship",
+    "I connect business needs with data and technology, clarifying problems, uncovering useful insights, and helping teams improve processes and make informed decisions. I’m especially interested in applying AI to practical business challenges.",
 };
 
 export const aboutData = {
   title: "About Me",
-  content:
-    "I am a Master’s student in Business Analytics & AI at Ontario Tech University with 7 years of experience defining, building, and executing processes and tests that measure and determine software quality. Proficient in Agile scrum, I combine my technical background with data-driven insights to solve real-world business problems efficiently. My goal is to use data, AI, and analytics to help companies make smarter and accurate decisions.",
-  skills: [
-    "Python",
-    "SQL",
-    "Tableau",
-    "Power BI",
-    "Excel",
-    "Agile/Scrum",
-    "QA Testing",
-    "Business Analytics",
-    "Data Analysis",
-    "Data Storytelling",
+  content: [
+    "I’m a technology professional whose work spans business processes, systems, data, and software delivery. Across banking, financial services, and technology, I’ve worked with cross-functional teams to clarify needs, validate workflows, and improve how solutions support the people who use them.",
+    "With a Master of Business Analytics and Artificial Intelligence from Ontario Tech University, I combine business analysis with data-driven thinking. I’m interested in using analytics and emerging AI responsibly to identify practical opportunities, improve processes, and support better decisions.",
+  ],
+  whatIBring: [
+    {
+      title: "Business Understanding",
+      description: "Connecting business needs with practical technology solutions",
+      icon: Users,
+    },
+    {
+      title: "Analytical Thinking",
+      description: "Exploring data to uncover patterns and support informed decision-making",
+      icon: BarChart2,
+    },
+    {
+      title: "Practical AI Applications",
+      description: "Applying AI tools to improve workflows and problem-solving",
+      icon: Brain,
+    },
+    {
+      title: "Solution Validation",
+      description: "Ensuring solutions meet business needs and work as intended.",
+      icon: Lightbulb,
+    },
   ],
 };
 
@@ -53,6 +55,7 @@ export type Project = {
   title: string;
   description: string;
   image: string;
+  isGroupProject?: boolean;
   buttons: {
     label: string;
     link: string;
@@ -63,6 +66,50 @@ export type Project = {
 };
 
 export const projectsData: Project[] = [
+  {
+    id: "project-b",
+    title: "AI, Upskilling & Affordability",
+    description:
+      "A data-driven analysis on how the AI revolution is reshaping job stability for middle-aged workers in the Durham Region and GTA. The group project uses statistical analysis and data visualization to examine AI adoption, workforce upskilling, affordability, and workforce readiness.",
+    image: "/project-b.png",
+    isGroupProject: true,
+    buttons: [
+      {
+        label: "View Presentation",
+        link: "https://www.canva.com/design/DAG6wkKEAVE/GUX-oLZulfdQVNrY1tN5fw/edit?utm_content=DAG6wkKEAVE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+        type: "primary",
+        isExternal: true,
+      },
+      {
+        label: "View Data Story",
+        link: "https://drive.google.com/file/d/1GpU-YefSyupSw3fmyvJ-IOU3ikAyf3o_/view?usp=sharing",
+        type: "secondary",
+        isExternal: true,
+      },
+    ],
+  },
+  {
+    id: "project-e",
+    title: "Litmus Trading Analytics Platform",
+    description:
+      "A Multi-Strategy Algorithmic Trading Analytics Platform Using Python, Backtrader, and Streamlit. The group project uses Python and Streamlit to analyze and evaluate algorithmic trading strategies, focusing on performance, system behaviour, and outcome metrics.",
+    image: "/Project-ee.png",
+    isGroupProject: true,
+    buttons: [
+      {
+        label: "View Presentation",
+        link: "https://drive.google.com/file/d/1buRL43LrJxgPjlLrZA8dk605L7ZEWG3D/view?usp=sharing",
+        type: "primary",
+        isExternal: true,
+      },
+      {
+        label: "View Github Python File",
+        link: "https://github.com/FolushoKayode/Litmus-Trading-Analytics-Platform-/blob/main/Backtestapp.ipynb",
+        type: "secondary",
+        isExternal: true,
+      }, // Placeholder for local file
+    ],
+  },
   {
     id: "project-a",
     title: "Redesign of Florence Nightingale's Coxcomb Diagram",
@@ -79,27 +126,6 @@ export const projectsData: Project[] = [
       {
         label: "View Github Python File",
         link: "https://github.com/FolushoKayode/Florence-Nightingale-Coxcomb-Redesign/blob/main/Redesign%20of%20Florence%20Nightingale's%20Coxcomb%20Diagram_Mofoluwasho%20Kayode.ipynb",
-        type: "secondary",
-        isExternal: true,
-      },
-    ],
-  },
-  {
-    id: "project-b",
-    title: "AI, Upskilling & Affordability",
-    description:
-      "A data-driven analysis on how the AI revolution is reshaping job stability for middle-aged workers in the Durham Region and GTA.",
-    image: "/project-b.png",
-    buttons: [
-      {
-        label: "View Presentation",
-        link: "https://www.canva.com/design/DAG6wkKEAVE/GUX-oLZulfdQVNrY1tN5fw/edit?utm_content=DAG6wkKEAVE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
-        type: "primary",
-        isExternal: true,
-      },
-      {
-        label: "View Data Story",
-        link: "https://drive.google.com/file/d/1GpU-YefSyupSw3fmyvJ-IOU3ikAyf3o_/view?usp=sharing",
         type: "secondary",
         isExternal: true,
       },
@@ -142,27 +168,6 @@ export const projectsData: Project[] = [
       {
         label: "View Project Details",
         link: "https://drive.google.com/file/d/1rGK-JMJACfSgF8pwgHf2STdnhwJ8xOga/view?usp=sharing",
-        type: "secondary",
-        isExternal: true,
-      }, // Placeholder for local file
-    ],
-  },
-  {
-    id: "project-e",
-    title: "Litmus Trading Analytics Platform",
-    description:
-      "A Multi-Strategy Algorithmic Trading Analytics Platform Using Python, Backtrader, and Streamlit.",
-    image: "/Project-ee.png",
-    buttons: [
-      {
-        label: "View Presentation",
-        link: "https://drive.google.com/file/d/1buRL43LrJxgPjlLrZA8dk605L7ZEWG3D/view?usp=sharing",
-        type: "primary",
-        isExternal: true,
-      },
-      {
-        label: "View Github Python File",
-        link: "https://github.com/FolushoKayode/Litmus-Trading-Analytics-Platform-/blob/main/Backtestapp.ipynb",
         type: "secondary",
         isExternal: true,
       }, // Placeholder for local file

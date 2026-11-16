@@ -1,4 +1,4 @@
-import { heroData } from "@/lib/data";
+import { heroData, siteConfig } from "@/lib/data";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -15,28 +15,23 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="flex flex-col gap-6"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-green-800 w-fit text-sm font-medium border border-green-200">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-            </span>
-            {heroData.status}
-          </div>
-
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-[1.1] tracking-tight">
-            Transforming Data into <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Decisions.</span>
+          <h1 className="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+            {heroData.headline}
           </h1>
 
           <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
             {heroData.subheadline}
           </p>
 
-          <div className="flex gap-4 pt-4">
-            <a href="#projects" className="px-8 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
-              View Work
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-4">
+            <a href="#projects" className="px-8 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-center">
+              Explore My Projects
             </a>
-            <a href="#contact" className="px-8 py-3 bg-white text-primary border border-primary/20 rounded-full font-medium hover:bg-gray-50 transition-all">
-              Contact Me
+            <a href={siteConfig.resume} target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-white text-primary border border-primary/20 rounded-full font-medium hover:bg-gray-50 transition-all text-center">
+              View Resume
+            </a>
+            <a href="#contact" className="px-8 py-3 bg-white text-primary border border-primary/20 rounded-full font-medium hover:bg-gray-50 transition-all text-center">
+              Connect With Me
             </a>
           </div>
         </motion.div>
@@ -51,7 +46,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-secondary/20 rounded-full translate-x-4 translate-y-4" />
             <img
               src="/Pic.jpg"
-              alt="Mofoluwasho Kayode"
+              alt="Folusho Kayode"
               className="w-full h-full object-cover rounded-full border-8 border-white shadow-2xl relative z-10"
             />
             {/* Floating elements */}
@@ -60,8 +55,8 @@ export default function Hero() {
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
               className="absolute top-10 left-0 bg-white p-4 rounded-xl shadow-lg z-20 border border-gray-100"
             >
-              <div className="text-sm font-bold text-primary">Analytics</div>
-              <div className="text-xs text-muted-foreground">Expert</div>
+              <div className="text-sm font-bold text-primary">Data Analytics</div>
+              <div className="text-xs text-muted-foreground">Practical insights</div>
             </motion.div>
             
             <motion.div 
@@ -69,7 +64,7 @@ export default function Hero() {
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
               className="absolute bottom-20 right-0 bg-white p-4 rounded-xl shadow-lg z-20 border border-gray-100"
             >
-              <div className="text-sm font-bold text-secondary">Business</div>
+              <div className="text-sm font-bold text-secondary">Artificial</div>
               <div className="text-xs text-muted-foreground">Intelligence</div>
             </motion.div>
           </div>

@@ -2,7 +2,22 @@ import { projectsData } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { ExternalLink, Download, ArrowRight } from "lucide-react";
+import { ExternalLink, Download } from "lucide-react";
+
+const featuredProjectIds = [
+  "project-b",
+  "project-e",
+  "project-f",
+  "project-a",
+] as const;
+
+const featuredProjects = featuredProjectIds.map((id) => {
+  const project = projectsData.find((candidate) => candidate.id === id);
+  if (!project) {
+    throw new Error(`Featured project "${id}" is missing from projectsData.`);
+  }
+  return project;
+});
 
 export default function Projects() {
   return (
@@ -18,8 +33,8 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projectsData.map((project, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {featuredProjects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
@@ -37,6 +52,11 @@ export default function Projects() {
                   <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300" />
                 </div>
                 <CardHeader className="pb-4">
+                  {project.isGroupProject && (
+                    <span className="mb-2 inline-flex w-fit rounded-full bg-secondary/10 px-3 py-1 text-xs font-semibold tracking-wide text-secondary">
+                      Group project
+                    </span>
+                  )}
                   <CardTitle className="text-xl font-bold text-primary group-hover:text-secondary transition-colors">
                     {project.title}
                   </CardTitle>
